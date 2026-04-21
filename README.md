@@ -1,6 +1,6 @@
 # nhanes-opioid-disparities-1999-2018
 
-Replication code for **"Two decades of racial disparities in opioid prescribing in the United States: a decomposition analysis of the National Health and Nutrition Examination Survey, 1999–2018"** (submitted to *The Lancet Regional Health – Americas*, 2026).
+Replication code for **"Persistence of the Unexplained Black–White Gap in U.S. Opioid Prescription Receipt Across a Transforming Analgesic Landscape: A Repeated Cross-Sectional Analysis of NHANES 1999–2018"** (submitted to *The Lancet Regional Health – Americas*, 2026).
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![Docs CC BY 4.0](https://img.shields.io/badge/Docs-CC--BY%204.0-lightgrey.svg)](LICENSE)
@@ -83,7 +83,7 @@ Code (`.R` files, `environment.R`) under the [MIT License](LICENSE); documentati
 
 To be updated after DOI assignment:
 
-> [USER: INSERT Authors]. Two decades of racial disparities in opioid prescribing in the United States: a decomposition analysis of the National Health and Nutrition Examination Survey, 1999–2018. *The Lancet Regional Health – Americas* 2026 (forthcoming). DOI: [to be assigned on acceptance].
+> [USER: INSERT Authors]. Persistence of the Unexplained Black–White Gap in U.S. Opioid Prescription Receipt Across a Transforming Analgesic Landscape: A Repeated Cross-Sectional Analysis of NHANES 1999–2018. *The Lancet Regional Health – Americas* 2026 (forthcoming). DOI: [to be assigned on acceptance].
 
 For the exact code version used in the manuscript, cite the Zenodo release:
 
