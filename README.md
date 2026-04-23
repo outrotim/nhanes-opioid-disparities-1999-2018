@@ -1,6 +1,6 @@
 # nhanes-opioid-disparities-1999-2018
 
-Replication code for **"The Black-White Gap In U.S. Opioid Prescribing Is At The Short-Course Margin, Not Chronic Maintenance: Why The 2016 CDC Guideline Did Not Close It"** (under review at *Health Affairs*, 2026).
+Replication code for **"The Black-White Gap In U.S. Opioid Prescribing Concentrates At The Short-Course Margin: A Cross-Database NHANES-MEPS Decomposition With Implications For The 2016 CDC Guideline"** (under review at *Pharmacoepidemiology and Drug Safety*, 2026).
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![Docs CC BY 4.0](https://img.shields.io/badge/Docs-CC--BY%204.0-lightgrey.svg)](LICENSE)
@@ -67,8 +67,8 @@ Rscript scripts/01_build_analytic.R       # NHANES analytic parquet
 Rscript scripts/02_main_analyses.R        # NHANES Oaxaca + CDC 2016 stability
 Rscript scripts/03_sensitivity.R          # MICE / E-value / NCO / MEPS ratio
 Rscript scripts/04_figures.R              # Manuscript figures
-Rscript scripts/05_class_decomposition.R  # NHANES 5-class Oaxaca (Exhibit 3)
-Rscript scripts/06_meps_margin.R          # MEPS pooled margin decomposition (Exhibit 1)
+Rscript scripts/05_class_decomposition.R  # NHANES 5-class Oaxaca (Figure 3)
+Rscript scripts/06_meps_margin.R          # MEPS pooled margin decomposition (Figure 1)
 ```
 
 End-to-end runtime is about 25–35 minutes on a 2020 M1 MacBook Pro; the MICE step in `03_sensitivity.R` and the 1,000-replicate bootstrap in `06_meps_margin.R` dominate.
@@ -101,7 +101,7 @@ Code (`.R` files, `environment.R`) under the [MIT License](LICENSE); documentati
 
 To be updated after DOI assignment:
 
-> [USER: INSERT Authors]. The Black-White Gap In U.S. Opioid Prescribing Is At The Short-Course Margin, Not Chronic Maintenance: Why The 2016 CDC Guideline Did Not Close It. *Health Affairs* 2026 (under review). DOI: [to be assigned on acceptance].
+> [USER: INSERT Authors]. The Black-White Gap In U.S. Opioid Prescribing Concentrates At The Short-Course Margin: A Cross-Database NHANES-MEPS Decomposition With Implications For The 2016 CDC Guideline. *Pharmacoepidemiology and Drug Safety* 2026 (under review). DOI: [to be assigned on acceptance].
 
 For the exact code version used in the manuscript, cite the Zenodo release:
 
