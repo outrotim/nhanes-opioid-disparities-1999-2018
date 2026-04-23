@@ -19,6 +19,9 @@ scripts/
   05_class_decomposition.R   NHANES 5-class Oaxaca (opioid + 4 adjuvant classes)
   06_meps_margin.R           MEPS 2015-2016 pooled extensive vs chronic vs
                              short-course margin decomposition with bootstrap
+reproducibility/
+  requirements.R             20 R packages pinned to manuscript snapshot
+  Dockerfile                 rocker/r-ver:4.5.1 reproducibility container
 ```
 
 No individual-level data are included.
@@ -72,6 +75,30 @@ Rscript scripts/06_meps_margin.R          # MEPS pooled margin decomposition (Fi
 ```
 
 End-to-end runtime is about 25–35 minutes on a 2020 M1 MacBook Pro; the MICE step in `03_sensitivity.R` and the 1,000-replicate bootstrap in `06_meps_margin.R` dominate.
+
+## Reproducibility container
+
+A pinned R environment is provided for exact replication of the manuscript analyses.
+
+**Option A — Native R, version-pinned packages (no Docker required):**
+
+```bash
+Rscript reproducibility/requirements.R   # installs the 20 pinned packages
+```
+
+This calls `remotes::install_version()` for each of the 20 packages used by scripts 01–06, matching the v2.1 manuscript snapshot (R 4.5.1, 2025-06-13).
+
+**Option B — Full container (R runtime + system libraries + pinned packages):**
+
+```bash
+docker build -f reproducibility/Dockerfile -t nhanes-opioid-disparities .
+docker run --rm -it \
+  -e STUDY_ROOT=/work \
+  -v $(pwd):/work \
+  nhanes-opioid-disparities
+```
+
+The container builds on `rocker/r-ver:4.5.1`, installs the system dependencies needed by `arrow`, `survey`, and `haven`, and then runs `reproducibility/requirements.R` to install the 20 pinned R packages. Mount your local NHANES + MEPS work directory at `/work` so the scripts can find the raw XPT and SSP files.
 
 ## Analytic choices worth knowing before reuse
 
